@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/jeantimex/neural-flappy-bird#readme",
   "devDependencies": {
+    "@tensorflow/tfjs": "^4.1.0",
+    "@tensorflow/tfjs-node": "^4.1.0",
+    "@tensorflow/tfjs-node-gpu": "^4.1.0",
+    "@types/node": "^18.11.17",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
