@@ -79,12 +79,23 @@ export class App {
       if (shouldJump) {
         bird.jump();
       }
+
+      const hasCollidedPipe = this.pipeManager.hasCollidedPipe(bird);
+      if (hasCollidedPipe) {
+        aliveBirds.splice(i, 1);
+        continue;
+      }
+
+      const hasPassedPipe = this.pipeManager.hasPassedPipe(bird);
+      if (hasPassedPipe) {
+        bird.score++;
+      }
     }
 
-    //if (this.birdManager.getAliveBirds().length === 0) {
-    //  this.pipeManager.reset();
-    //  this.birdManager.createNewGeneration();
-    //}
+    if (aliveBirds.length === 0) {
+      this.pipeManager.reset();
+      this.birdManager.createNewGeneration();
+    }
 
     this.fpsMeter.update();
 

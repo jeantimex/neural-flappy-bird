@@ -51,8 +51,8 @@ export class Pipe {
     return false;
   }
 
-  public pass(x: number): boolean {
-    if (this.x + this.width < x && !this.hasPassed) {
+  public isPassedByBird(bird: Bird): boolean {
+    if (this.x + this.width < bird.x && !this.hasPassed) {
       this.hasPassed = true;
       return true;
     }

@@ -1,4 +1,5 @@
 import { Assets } from "./types";
+import { Bird } from "./bird";
 import { Pipe } from "./pipe";
 import { random } from "./util";
 
@@ -65,5 +66,25 @@ export class PipeManager {
     }
 
     return closest;
+  }
+
+  public hasCollidedPipe(bird: Bird): boolean {
+    for (const pipe of this.pipes) {
+      if (pipe.isCollidedWithBird(bird)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  public hasPassedPipe(bird: Bird): boolean {
+    for (const pipe of this.pipes) {
+      if (pipe.isPassedByBird(bird)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
