@@ -17,7 +17,7 @@ export class App {
 
     this.backgroundManager = new BackgroundManager(assets, canvas);
     this.pipeManager = new PipeManager(assets, canvas);
-    this.birdManager = new BirdManager(assets, canvas, 1);
+    this.birdManager = new BirdManager(assets, canvas, 300);
     this.fpsMeter = new FpsMeter(canvas);
 
     this.loop(assets, canvas);
